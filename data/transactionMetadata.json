@@ -1,0 +1,1165 @@
+{
+  "version": "1.0",
+  "transactions": {
+    "CryptoCreate": {
+      "description": "Create a new Account",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "numKeys",
+          "type": "number",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 100,
+          "prompt": "Number of keys",
+          "values": null
+        },
+        {
+          "name": "numHooksCreated",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 100,
+          "prompt": "Number of hooks created",
+          "values": null
+        }
+      ],
+      "calculatorType": "EntityCreate",
+      "signatureRule": "numFreeKeys + 1"
+    },
+    "CryptoUpdate": {
+      "description": "Updates an existing account",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "numKeys",
+          "type": "number",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 100,
+          "prompt": "Number of keys",
+          "values": null
+        },
+        {
+          "name": "numHooksCreated",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 100,
+          "prompt": "Number of hooks created",
+          "values": null
+        },
+        {
+          "name": "numHooksUpdated",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 100,
+          "prompt": "Number of hooks updated/replaced",
+          "values": null
+        },
+        {
+          "name": "numHooksDeleted",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 100,
+          "prompt": "Number of hooks deleted",
+          "values": null
+        }
+      ],
+      "calculatorType": "EntityUpdate"
+    },
+    "CryptoTransfer": {
+      "description": "Transfers a combination of hbars and tokens.",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "numAccountsInvolved",
+          "type": "number",
+          "defaultValue": 2,
+          "min": 0,
+          "max": 20,
+          "prompt": "Number of Accounts involved",
+          "values": null
+        },
+        {
+          "name": "numFTNoCustomFeeEntries",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 10,
+          "prompt": "Fungible token entries without custom fee",
+          "values": null
+        },
+        {
+          "name": "numNFTNoCustomFeeEntries",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 10,
+          "prompt": "NFT entries without custom fee",
+          "values": null
+        },
+        {
+          "name": "numFTWithCustomFeeEntries",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 10,
+          "prompt": "Fungible token entries with custom fee",
+          "values": null
+        },
+        {
+          "name": "numNFTWithCustomFeeEntries",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 10,
+          "prompt": "NFT entries with custom fee",
+          "values": null
+        },
+        {
+          "name": "numAutoAssociationsCreated",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 10,
+          "prompt": "Auto-created token associations",
+          "values": null
+        },
+        {
+          "name": "numAutoAccountsCreated",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 20,
+          "prompt": "Auto-created accounts",
+          "values": null
+        },
+        {
+          "name": "numHooksInvoked",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 100,
+          "prompt": "Number of hooks invoked",
+          "values": null
+        },
+        {
+          "name": "gasConsumed",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 15000000,
+          "prompt": "Gas consumed by hook execution",
+          "values": null
+        }
+      ],
+      "calculatorType": "CryptoTransfer"
+    },
+    "CryptoDelete": {
+      "description": "Deletes an existing account",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "CryptoGetAccountRecords": {
+      "description": "Retrieves records for an account",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "CryptoGetAccountBalance": {
+      "description": "Retrieves an account's balance",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "CryptoGetInfo": {
+      "description": "Retrieves an account's information",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "CryptoGetStakers": {
+      "description": "Retrieves the list of proxy stakers for a node",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "CryptoApproveAllowance": {
+      "description": "Allows a third-party to transfer on behalf of a delegating account (HIP-336)",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "numAllowances",
+          "type": "number",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 10,
+          "prompt": "Number of Allowances",
+          "values": null
+        }
+      ],
+      "calculatorType": "Simple"
+    },
+    "CryptoDeleteAllowance": {
+      "description": "Deletes non-fungible approved allowances from an owner's account",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "numAllowances",
+          "type": "number",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 10,
+          "prompt": "Number of Allowances",
+          "values": null
+        }
+      ],
+      "calculatorType": "Simple"
+    },
+    "LambdaSStore": {
+      "description": "Updates hook storage (key/value EVM-compatible storage)",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "gas",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 15000000,
+          "prompt": "Gas consumed",
+          "values": null
+        }
+      ],
+      "calculatorType": "LambdaSStore"
+    },
+    "ConsensusCreateTopic": {
+      "description": "Create a new topic",
+      "customFee": {
+        "capable": true,
+        "baseFee": 200000000000
+      },
+      "parameters": [
+        {
+          "name": "numKeys",
+          "type": "number",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 100,
+          "prompt": "Number of keys",
+          "values": null
+        },
+        {
+          "name": "hasCustomFee",
+          "type": "list",
+          "defaultValue": "No",
+          "min": 0,
+          "max": 0,
+          "prompt": "Enable custom fee?",
+          "values": ["Yes", "No"]
+        }
+      ],
+      "calculatorType": "EntityCreate",
+      "signatureRule": "numFreeKeys + 1"
+    },
+    "ConsensusUpdateTopic": {
+      "description": "Update an existing topic",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "numKeys",
+          "type": "number",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 100,
+          "prompt": "Number of keys",
+          "values": null
+        }
+      ],
+      "calculatorType": "EntityUpdate"
+    },
+    "ConsensusSubmitMessage": {
+      "description": "Submit a message to an existing topic",
+      "customFee": {
+        "capable": true,
+        "baseFee": 500000000
+      },
+      "parameters": [
+        {
+          "name": "hasCustomFee",
+          "type": "list",
+          "defaultValue": "No",
+          "min": 0,
+          "max": 0,
+          "prompt": "Does this topic have custom fee",
+          "values": ["Yes", "No"]
+        }
+      ],
+      "calculatorType": "Simple"
+    },
+    "ConsensusDeleteTopic": {
+      "description": "Delete an existing topic",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "ConsensusGetTopicInfo": {
+      "description": "Retrieve a topic's metadata",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "TokenCreate": {
+      "description": "Create a new token-type",
+      "customFee": {
+        "capable": true,
+        "baseFee": 200000000000
+      },
+      "parameters": [
+        {
+          "name": "numKeys",
+          "type": "number",
+          "defaultValue": 7,
+          "min": 1,
+          "max": 100,
+          "prompt": "Number of keys",
+          "values": null
+        },
+        {
+          "name": "hasCustomFee",
+          "type": "list",
+          "defaultValue": "No",
+          "min": 0,
+          "max": 0,
+          "prompt": "Enable custom fee?",
+          "values": ["Yes", "No"]
+        }
+      ],
+      "calculatorType": "EntityCreate",
+      "signatureRule": "numFreeKeys + 1"
+    },
+    "TokenUpdate": {
+      "description": "Update an existing token-type",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "numKeys",
+          "type": "number",
+          "defaultValue": 7,
+          "min": 1,
+          "max": 100,
+          "prompt": "Number of keys",
+          "values": null
+        }
+      ],
+      "calculatorType": "EntityUpdate"
+    },
+    "TokenTransfer": {
+      "description": "Transfers a combination of hbars and tokens.",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "numAccountsInvolved",
+          "type": "number",
+          "defaultValue": 2,
+          "min": 0,
+          "max": 20,
+          "prompt": "Number of Accounts involved",
+          "values": null
+        },
+        {
+          "name": "numFTNoCustomFeeEntries",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 10,
+          "prompt": "Fungible token entries without custom fee",
+          "values": null
+        },
+        {
+          "name": "numNFTNoCustomFeeEntries",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 10,
+          "prompt": "NFT entries without custom fee",
+          "values": null
+        },
+        {
+          "name": "numFTWithCustomFeeEntries",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 10,
+          "prompt": "Fungible token entries with custom fee",
+          "values": null
+        },
+        {
+          "name": "numNFTWithCustomFeeEntries",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 10,
+          "prompt": "NFT entries with custom fee",
+          "values": null
+        },
+        {
+          "name": "numAutoAssociationsCreated",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 10,
+          "prompt": "Auto-created token associations",
+          "values": null
+        },
+        {
+          "name": "numAutoAccountsCreated",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 20,
+          "prompt": "Auto-created accounts",
+          "values": null
+        },
+        {
+          "name": "numHooksInvoked",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 100,
+          "prompt": "Number of hooks invoked",
+          "values": null
+        },
+        {
+          "name": "gasConsumed",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 15000000,
+          "prompt": "Gas consumed by hook execution",
+          "values": null
+        }
+      ],
+      "calculatorType": "CryptoTransfer"
+    },
+    "TokenDelete": {
+      "description": "Delete an existing token",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "TokenMint": {
+      "description": "Mint tokens",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "fungibleOrNonFungible",
+          "type": "list",
+          "defaultValue": "Fungible",
+          "min": 0,
+          "max": 0,
+          "prompt": "Fungible or Non-fungible token",
+          "values": ["Fungible", "NonFungible"]
+        },
+        {
+          "name": "numTokens",
+          "type": "number",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 10,
+          "prompt": "Number of tokens minted",
+          "values": null
+        }
+      ],
+      "calculatorType": "TokenMint"
+    },
+    "TokenBurn": {
+      "description": "Burn tokens",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "fungibleOrNonFungible",
+          "type": "list",
+          "defaultValue": "Fungible",
+          "min": 0,
+          "max": 0,
+          "prompt": "Fungible or Non-fungible token",
+          "values": ["Fungible", "NonFungible"]
+        },
+        {
+          "name": "numTokens",
+          "type": "number",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 10,
+          "prompt": "Number of NFT serials burned",
+          "values": null
+        }
+      ],
+      "calculatorType": "TokenBurn"
+    },
+    "TokenPause": {
+      "description": "Pauses a token",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "TokenUnpause": {
+      "description": "Unpauses a token",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "TokenAirdrop": {
+      "description": "Transfers a combination of hbars and tokens.",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "numAccountsInvolved",
+          "type": "number",
+          "defaultValue": 2,
+          "min": 0,
+          "max": 20,
+          "prompt": "Number of Accounts involved",
+          "values": null
+        },
+        {
+          "name": "numFTNoCustomFeeEntries",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 10,
+          "prompt": "Fungible token entries without custom fee",
+          "values": null
+        },
+        {
+          "name": "numNFTNoCustomFeeEntries",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 10,
+          "prompt": "NFT entries without custom fee",
+          "values": null
+        },
+        {
+          "name": "numFTWithCustomFeeEntries",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 10,
+          "prompt": "Fungible token entries with custom fee",
+          "values": null
+        },
+        {
+          "name": "numNFTWithCustomFeeEntries",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 10,
+          "prompt": "NFT entries with custom fee",
+          "values": null
+        },
+        {
+          "name": "numAutoAssociationsCreated",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 10,
+          "prompt": "Auto-created token associations",
+          "values": null
+        },
+        {
+          "name": "numAutoAccountsCreated",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 20,
+          "prompt": "Auto-created accounts",
+          "values": null
+        },
+        {
+          "name": "numHooksInvoked",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 100,
+          "prompt": "Number of hooks invoked",
+          "values": null
+        },
+        {
+          "name": "gasConsumed",
+          "type": "number",
+          "defaultValue": 0,
+          "min": 0,
+          "max": 15000000,
+          "prompt": "Gas consumed by hook execution",
+          "values": null
+        }
+      ],
+      "calculatorType": "CryptoTransfer"
+    },
+    "TokenClaimAirdrop": {
+      "description": "Claim a pending airdrop",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "numTokenTypes",
+          "type": "number",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 10,
+          "prompt": "Number of token-types/NFT serials",
+          "values": null
+        }
+      ],
+      "calculatorType": "Simple"
+    },
+    "TokenCancelAirdrop": {
+      "description": "Cancel a pending airdrop",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "numTokenTypes",
+          "type": "number",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 10,
+          "prompt": "Number of token-types/NFT serials",
+          "values": null
+        }
+      ],
+      "calculatorType": "Simple"
+    },
+    "TokenReject": {
+      "description": "Reject a token and send back to treasury",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "numTokenTypes",
+          "type": "number",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 10,
+          "prompt": "Number of token-types/NFT serials",
+          "values": null
+        }
+      ],
+      "calculatorType": "Simple"
+    },
+    "TokenFeeScheduleUpdate": {
+      "description": "Updates the custom fee schedule for a token",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "TokenAssociateToAccount": {
+      "description": "Associate tokens-types to accounts",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "numTokenTypes",
+          "type": "number",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 10,
+          "prompt": "Number of associated token-types",
+          "values": null
+        }
+      ],
+      "calculatorType": "Simple"
+    },
+    "TokenDissociateFromAccount": {
+      "description": "Dissociate tokens-types from accounts",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "numTokenTypes",
+          "type": "number",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 10,
+          "prompt": "Number of associated token-types",
+          "values": null
+        }
+      ],
+      "calculatorType": "Simple"
+    },
+    "TokenGrantKycToAccount": {
+      "description": "Grant KYC to an account from a particular token",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "TokenRevokeKycFromAccount": {
+      "description": "Revoke KYC from an account for a particular token",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "TokenFreezeAccount": {
+      "description": "Freeze an account for a particular token",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "TokenUnfreezeAccount": {
+      "description": "Unfreeze an account for a particular token",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "TokenAccountWipe": {
+      "description": "Wipe tokens",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "numTokens",
+          "type": "number",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 10,
+          "prompt": "If NFT, Number of serials wiped",
+          "values": null
+        }
+      ],
+      "calculatorType": "TokenWipe"
+    },
+    "TokenGetInfo": {
+      "description": "Retrieve a token's metadata",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "TokenGetNftInfos": {
+      "description": "Retrieve multiple NFTs' information",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "numTokens",
+          "type": "number",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 10,
+          "prompt": "Number of NFT serial numbers",
+          "values": null
+        }
+      ],
+      "calculatorType": "Simple"
+    },
+    "ContractCreate": {
+      "description": "Create a new Smart Contract",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "numKeys",
+          "type": "number",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 100,
+          "prompt": "Number of keys",
+          "values": null
+        },
+        {
+          "name": "gas",
+          "type": "number",
+          "defaultValue": 21000,
+          "min": 21000,
+          "max": 15000000,
+          "prompt": "Gas",
+          "values": null
+        }
+      ],
+      "calculatorType": "ContractCreate"
+    },
+    "ContractUpdate": {
+      "description": "Update an existing Smart Contract",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "numKeys",
+          "type": "number",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 100,
+          "prompt": "Number of keys",
+          "values": null
+        }
+      ],
+      "calculatorType": "EntityUpdate"
+    },
+    "ContractDelete": {
+      "description": "Delete an existing smart contract",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "ContractCall": {
+      "description": "Execute a smart contract call",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "gas",
+          "type": "number",
+          "defaultValue": 21000,
+          "min": 21000,
+          "max": 15000000,
+          "prompt": "Gas",
+          "values": null
+        }
+      ],
+      "calculatorType": "ContractBasedOnGas"
+    },
+    "EthereumTransaction": {
+      "description": "Submits a wrapped Ethereum Transaction per HIP-410",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "gas",
+          "type": "number",
+          "defaultValue": 21000,
+          "min": 21000,
+          "max": 15000000,
+          "prompt": "Gas",
+          "values": null
+        }
+      ],
+      "calculatorType": "ContractBasedOnGas"
+    },
+    "ContractGetInfo": {
+      "description": "Retrieve a smart contract's metadata",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "ContractCallLocal": {
+      "description": "Execute a smart contract call on a single node",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "ContractGetBytecode": {
+      "description": "Retrieve a smart contract's bytecode",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "FileCreate": {
+      "description": "Create a new file",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "numKeys",
+          "type": "number",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 100,
+          "prompt": "Number of keys",
+          "values": null
+        },
+        {
+          "name": "numBytes",
+          "type": "number",
+          "defaultValue": 1000,
+          "min": 1,
+          "max": 131072,
+          "prompt": "Size of the file (bytes)",
+          "values": null
+        }
+      ],
+      "calculatorType": "FileOperations"
+    },
+    "FileUpdate": {
+      "description": "Update an existing file",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "numKeys",
+          "type": "number",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 100,
+          "prompt": "Number of keys",
+          "values": null
+        },
+        {
+          "name": "numBytes",
+          "type": "number",
+          "defaultValue": 1000,
+          "min": 1,
+          "max": 131072,
+          "prompt": "Size of the file (bytes)",
+          "values": null
+        }
+      ],
+      "calculatorType": "FileOperations"
+    },
+    "FileDelete": {
+      "description": "Delete an existing file",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "FileAppend": {
+      "description": "Append to an existing file",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "numKeys",
+          "type": "number",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 100,
+          "prompt": "Number of keys",
+          "values": null
+        },
+        {
+          "name": "numBytes",
+          "type": "number",
+          "defaultValue": 1000,
+          "min": 1,
+          "max": 131072,
+          "prompt": "Size of the file (bytes)",
+          "values": null
+        }
+      ],
+      "calculatorType": "FileOperations"
+    },
+    "FileGetContents": {
+      "description": "Retrieve the contents of a file",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "FileGetInfo": {
+      "description": "Retrieve a file's metadata",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "ScheduleCreate": {
+      "description": "Create a new scheduled transaction",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [
+        {
+          "name": "numKeys",
+          "type": "number",
+          "defaultValue": 1,
+          "min": 1,
+          "max": 100,
+          "prompt": "Number of keys",
+          "values": null
+        }
+      ],
+      "calculatorType": "EntityCreate",
+      "signatureRule": "numFreeKeys + 1"
+    },
+    "ScheduleSign": {
+      "description": "Add a signature to a scheduled transaction",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "ScheduleDelete": {
+      "description": "Delete a scheduled transaction",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "ScheduleGetInfo": {
+      "description": "Retrieve information about a scheduled transaction",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "GetVersionInfo": {
+      "description": "Retrieve the current version of the network",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "TransactionGetReceipt": {
+      "description": "Retrieve a transaction's receipt",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "TransactionGetRecord": {
+      "description": "Retrieve a transaction's record",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "SystemDelete": {
+      "description": "System delete an existing file",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "SystemUndelete": {
+      "description": "System undelete an existing file",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "PrngTransaction": {
+      "description": "Generate a pseudorandom number",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "CreateNode": {
+      "description": "Add a new node to the address book",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "DeleteNode": {
+      "description": "Delete a node from the address book",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "UpdateNode": {
+      "description": "Modify node attributes",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    },
+    "BatchTransaction": {
+      "description": "Submit outer transaction containing a batch",
+      "customFee": {
+        "capable": false
+      },
+      "parameters": [],
+      "calculatorType": "Simple"
+    }
+  }
+}
+

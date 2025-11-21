@@ -1,0 +1,475 @@
+{
+  "version": "1.0",
+  "node": {
+    "baseFee": 100000,
+    "extras": [
+      {
+        "name": "SIGNATURES", "includedCount": 1
+      }
+    ]
+  },
+  "network": {
+    "multiplier": 9
+  },
+  "unreadable": {
+    "feeValue": 100
+  },
+  "extras": [
+    { "name": "SIGNATURES", "fee": 1000000 },
+    { "name": "BYTES", "fee": 110 },
+    { "name": "KEYS", "fee": 100000000 },
+    { "name": "TOKEN_TYPES", "fee": 0 },
+    { "name": "NFT_SERIALS", "fee": 8900000 },
+    { "name": "ACCOUNTS", "fee": 0 },
+    { "name": "STANDARD_FUNGIBLE_TOKENS", "fee": 9000000 },
+    { "name": "STANDARD_NON_FUNGIBLE_TOKENS", "fee": 100000 },
+    { "name": "CUSTOM_FEE_FUNGIBLE_TOKENS", "fee": 19000000 },
+    { "name": "CUSTOM_FEE_NON_FUNGIBLE_TOKENS", "fee": 10100000 },
+    { "name": "CREATED_AUTO_ASSOCIATIONS", "fee": 0 },
+    { "name": "CREATED_ACCOUNTS", "fee": 0 },
+    { "name": "CUSTOM_FEE", "fee": 0 },
+    { "name": "GAS", "fee": 1 },
+    { "name": "ALLOWANCES", "fee": 2000 },
+    { "name": "AIRDROPS", "fee": 8800 },
+    { "name": "HOOKS", "fee": 10000000000 },
+    { "name": "HOOK_CREATE", "fee": 10000000000 },
+    { "name": "HOOK_UPDATE", "fee": 10000000000 },
+    { "name": "HOOK_DELETE", "fee": 10000000000 },
+    { "name": "HOOK_INVOKE", "fee": 50000000 },
+    { "name": "PER_HCS_BYTE", "fee": 110 },
+    { "name": "PER_FILE_BYTE", "fee": 110 },
+    { "name": "PER_CRYPTO_TRANSFER_ACCOUNT", "fee": 100000 }
+  ],
+  "services": [
+    {
+      "name": "Crypto",
+      "schedule": [
+        {
+          "name": "CryptoCreate",
+          "baseFee": 500000000,
+          "extras": [
+            { "name": "KEYS", "includedCount": 1 },
+            { "name": "HOOKS", "includedCount": 0 }
+          ]
+        },
+        {
+          "name": "CryptoUpdate",
+          "baseFee": 2200000,
+          "extras": [
+            { "name": "KEYS", "includedCount": 1 },
+            { "name": "HOOKS", "includedCount": 0 }
+          ]
+        },
+        {
+          "name": "CryptoTransfer",
+          "baseFee": 1000000,
+          "extras": [
+            { "name": "KEYS", "includedCount": 1 },
+            { "name": "ACCOUNTS", "includedCount": 2 },
+            { "name": "STANDARD_FUNGIBLE_TOKENS", "includedCount": 1 }
+          ]
+        },
+        {
+          "name": "CryptoDelete",
+          "baseFee": 50000000,
+          "extras": []
+        },
+        {
+          "name": "CryptoGetAccountRecords",
+          "baseFee": 1000000,
+          "extras": []
+        },
+        {
+          "name": "CryptoGetAccountBalance",
+          "baseFee": 0,
+          "extras": []
+        },
+        {
+          "name": "CryptoGetInfo",
+          "baseFee": 1000000,
+          "extras": []
+        },
+        {
+          "name": "CryptoGetStakers",
+          "baseFee": 1000000,
+          "extras": []
+        },
+        {
+          "name": "CryptoApproveAllowance",
+          "baseFee": 500000000,
+          "extras": [
+            { "name": "ALLOWANCES", "includedCount": 1 }
+          ]
+        },
+        {
+          "name": "CryptoDeleteAllowance",
+          "baseFee": 500000000,
+          "extras": [
+            { "name": "ALLOWANCES", "includedCount": 1 }
+          ]
+        },
+        {
+          "name": "LambdaSStore",
+          "baseFee": 0,
+          "extras": [
+            { "name": "GAS", "includedCount": 0 }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Consensus",
+      "schedule": [
+        {
+          "name": "ConsensusCreateTopic",
+          "baseFee": 100000000,
+          "extras": [
+            { "name": "KEYS", "includedCount": 1 }
+          ]
+        },
+        {
+          "name": "ConsensusUpdateTopic",
+          "baseFee": 2200000,
+          "extras": [
+            { "name": "KEYS", "includedCount": 1 }
+          ]
+        },
+        {
+          "name": "ConsensusSubmitMessage",
+          "baseFee": 8000000,
+          "extras": [
+            { "name": "BYTES", "includedCount": 1024 }
+          ]
+        },
+        {
+          "name": "ConsensusDeleteTopic",
+          "baseFee": 50000000,
+          "extras": []
+        },
+        {
+          "name": "ConsensusGetTopicInfo",
+          "baseFee": 1000000,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "name": "Token",
+      "schedule": [
+        {
+          "name": "TokenCreate",
+          "baseFee": 10000000000,
+          "extras": [
+            { "name": "KEYS", "includedCount": 7 }
+          ]
+        },
+        {
+          "name": "TokenUpdate",
+          "baseFee": 10000000,
+          "extras": [
+            { "name": "KEYS", "includedCount": 7 }
+          ]
+        },
+        {
+          "name": "TokenTransfer",
+          "baseFee": 10000000,
+          "extras": [
+            { "name": "KEYS", "includedCount": 1 },
+            { "name": "ACCOUNTS", "includedCount": 2 },
+            { "name": "STANDARD_FUNGIBLE_TOKENS", "includedCount": 1 }
+          ]
+        },
+        {
+          "name": "TokenDelete",
+          "baseFee": 10000000,
+          "extras": []
+        },
+        {
+          "name": "TokenMint",
+          "baseFee": 10000000,
+          "extras": []
+        },
+        {
+          "name": "TokenBurn",
+          "baseFee": 10000000,
+          "extras": []
+        },
+        {
+          "name": "TokenPause",
+          "baseFee": 10000000,
+          "extras": []
+        },
+        {
+          "name": "TokenUnpause",
+          "baseFee": 10000000,
+          "extras": []
+        },
+        {
+          "name": "TokenAirdrop",
+          "baseFee": 1000000000,
+          "extras": [
+            { "name": "KEYS", "includedCount": 1 },
+            { "name": "ACCOUNTS", "includedCount": 2 },
+            { "name": "STANDARD_FUNGIBLE_TOKENS", "includedCount": 1 }
+          ]
+        },
+        {
+          "name": "TokenClaimAirdrop",
+          "baseFee": 10000000,
+          "extras": [
+            { "name": "TOKEN_TYPES", "includedCount": 1 }
+          ]
+        },
+        {
+          "name": "TokenCancelAirdrop",
+          "baseFee": 10000000,
+          "extras": [
+            { "name": "TOKEN_TYPES", "includedCount": 1 }
+          ]
+        },
+        {
+          "name": "TokenReject",
+          "baseFee": 10000000,
+          "extras": [
+            { "name": "TOKEN_TYPES", "includedCount": 1 }
+          ]
+        },
+        {
+          "name": "TokenFeeScheduleUpdate",
+          "baseFee": 10000000,
+          "extras": []
+        },
+        {
+          "name": "TokenAssociateToAccount",
+          "baseFee": 500000000,
+          "extras": [
+            { "name": "TOKEN_TYPES", "includedCount": 1 }
+          ]
+        },
+        {
+          "name": "TokenDissociateFromAccount",
+          "baseFee": 500000000,
+          "extras": [
+            { "name": "TOKEN_TYPES", "includedCount": 1 }
+          ]
+        },
+        {
+          "name": "TokenGrantKycToAccount",
+          "baseFee": 10000000,
+          "extras": []
+        },
+        {
+          "name": "TokenRevokeKycFromAccount",
+          "baseFee": 10000000,
+          "extras": []
+        },
+        {
+          "name": "TokenFreezeAccount",
+          "baseFee": 10000000,
+          "extras": []
+        },
+        {
+          "name": "TokenUnfreezeAccount",
+          "baseFee": 10000000,
+          "extras": []
+        },
+        {
+          "name": "TokenAccountWipe",
+          "baseFee": 10000000,
+          "extras": []
+        },
+        {
+          "name": "TokenGetInfo",
+          "baseFee": 1000000,
+          "extras": []
+        },
+        {
+          "name": "TokenGetNftInfos",
+          "baseFee": 1000000,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "name": "Smart Contract",
+      "schedule": [
+        {
+          "name": "ContractCreate",
+          "baseFee": 10000000000,
+          "extras": [
+            { "name": "KEYS", "includedCount": 1 },
+            { "name": "GAS", "includedCount": 21000 }
+          ]
+        },
+        {
+          "name": "ContractUpdate",
+          "baseFee": 260000000,
+          "extras": [
+            { "name": "KEYS", "includedCount": 1 }
+          ]
+        },
+        {
+          "name": "ContractDelete",
+          "baseFee": 70000000,
+          "extras": []
+        },
+        {
+          "name": "ContractCall",
+          "baseFee": 0,
+          "extras": [
+            { "name": "GAS", "includedCount": 0 }
+          ]
+        },
+        {
+          "name": "EthereumTransaction",
+          "baseFee": 0,
+          "extras": [
+            { "name": "GAS", "includedCount": 0 }
+          ]
+        },
+        {
+          "name": "ContractGetInfo",
+          "baseFee": 1000000,
+          "extras": []
+        },
+        {
+          "name": "ContractCallLocal",
+          "baseFee": 10000000,
+          "extras": []
+        },
+        {
+          "name": "ContractGetBytecode",
+          "baseFee": 500000000,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "name": "File",
+      "schedule": [
+        {
+          "name": "FileCreate",
+          "baseFee": 500000000,
+          "extras": [
+            { "name": "KEYS", "includedCount": 1 },
+            { "name": "BYTES", "includedCount": 1000 }
+          ]
+        },
+        {
+          "name": "FileUpdate",
+          "baseFee": 500000000,
+          "extras": [
+            { "name": "KEYS", "includedCount": 1 },
+            { "name": "BYTES", "includedCount": 1000 }
+          ]
+        },
+        {
+          "name": "FileDelete",
+          "baseFee": 70000000,
+          "extras": []
+        },
+        {
+          "name": "FileAppend",
+          "baseFee": 500000000,
+          "extras": [
+            { "name": "KEYS", "includedCount": 1 },
+            { "name": "BYTES", "includedCount": 1000 }
+          ]
+        },
+        {
+          "name": "FileGetContents",
+          "baseFee": 1000000,
+          "extras": []
+        },
+        {
+          "name": "FileGetInfo",
+          "baseFee": 1000000,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "name": "Schedule",
+      "schedule": [
+        {
+          "name": "ScheduleCreate",
+          "baseFee": 100000000,
+          "extras": [
+            { "name": "KEYS", "includedCount": 1 }
+          ]
+        },
+        {
+          "name": "ScheduleSign",
+          "baseFee": 10000000,
+          "extras": []
+        },
+        {
+          "name": "ScheduleDelete",
+          "baseFee": 10000000,
+          "extras": []
+        },
+        {
+          "name": "ScheduleGetInfo",
+          "baseFee": 1000000,
+          "extras": []
+        }
+      ]
+    },
+    {
+      "name": "Miscellaneous",
+      "schedule": [
+        {
+          "name": "GetVersionInfo",
+          "baseFee": 1000000,
+          "extras": []
+        },
+        {
+          "name": "TransactionGetReceipt",
+          "baseFee": 0,
+          "extras": []
+        },
+        {
+          "name": "TransactionGetRecord",
+          "baseFee": 1000000,
+          "extras": []
+        },
+        {
+          "name": "SystemDelete",
+          "baseFee": 0,
+          "extras": []
+        },
+        {
+          "name": "SystemUndelete",
+          "baseFee": 0,
+          "extras": []
+        },
+        {
+          "name": "PrngTransaction",
+          "baseFee": 10000000,
+          "extras": []
+        },
+        {
+          "name": "CreateNode",
+          "baseFee": 10000000,
+          "extras": []
+        },
+        {
+          "name": "DeleteNode",
+          "baseFee": 10000000,
+          "extras": []
+        },
+        {
+          "name": "UpdateNode",
+          "baseFee": 10000000,
+          "extras": []
+        },
+        {
+          "name": "BatchTransaction",
+          "baseFee": 10000000,
+          "extras": []
+        }
+      ]
+    }
+  ]
+}
+
